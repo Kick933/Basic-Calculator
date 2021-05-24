@@ -1,13 +1,18 @@
 #numbers{
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(4, 150px);
+}
+#input{
+    width:600px;
+    height:100px;
 }
 #calculator-wrapper{
         background: rgba(0, 0, 0, 0.75);
-        padding: 30px;
         margin: 50px auto;
         width: min-content;
+        padding: 10px;
+        border-radius: 20px;
 }
 .operator{
         background: rgba(220, 140, 0, 0.7);
@@ -20,7 +25,7 @@ body{
 }
 #btns{
     display: grid;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 300px 300px;
 }
 button{
     background-color: #555555;
@@ -31,11 +36,26 @@ button{
     font-size: 20px;
 }
 #numbers button{
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
 }
 #btns button{
-    width: 200px;
+    width: 300px;
     height: 100px;
     border-radius: 5px;
+}
+#display-area{
+    width: 600px;
+    height: 100px;
+    background-color: #555555;
+    color:whitesmoke;
+    outline: none;
+    border: 2px black solid;
+    border-radius: 10px;
+    font-size: 60px;
+    text-align: end;
+}
+button:active{
+    border-radius: 50%;
+    border:blanchedalmond solid 10px;
 }
