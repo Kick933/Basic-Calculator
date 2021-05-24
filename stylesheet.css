@@ -6,6 +6,7 @@
 #input{
     width:600px;
     height:100px;
+    text-align: end;
 }
 #calculator-wrapper{
         background: rgba(0, 0, 0, 0.75);
@@ -47,13 +48,12 @@ button{
 #display-area{
     width: 600px;
     height: 100px;
-    background-color: #555555;
+    background-color: #000000;
     color:whitesmoke;
     outline: none;
     border: 2px black solid;
     border-radius: 10px;
-    font-size: 60px;
-    text-align: end;
+    font-size: 70px;
 }
 button:active{
     border-radius: 50%;
