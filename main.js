@@ -1,6 +1,7 @@
 const show = document.querySelector("#display-area");
  
-let temp = "0"
+let temp = "";
+let dot1 =0;
 const one = document.querySelector('#one')
 one.addEventListener('click',()=>{
     show.textContent += "1";
@@ -34,10 +35,23 @@ eight.addEventListener('click',()=>{
     show.textContent += "8";
 })
 const nine = document.querySelector("#nine")
-one.addEventListener('click',()=>{
+nine.addEventListener('click',()=>{
     show.textContent += "9";
 })
 const aDot = document.querySelector("#dot")
-one.addEventListener('click',()=>{
+aDot.addEventListener('click',()=>{
+    if(dot1 == 0){
     show.textContent += ".";
+    dot1++;
+    }else{
+        alert("Dot allowed only once.");
+    }
+})
+const clear = document.querySelector("#clear-btn")
+clear.addEventListener('click',()=>{
+    show.textContent ="0";
+})
+const btnDelete = document.querySelector("#delete-btn")
+btnDelete.addEventListener('click',()=>{
+
 })
