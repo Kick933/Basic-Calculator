@@ -8,7 +8,6 @@ let opr1 = 0;
 let opr2 = 0;
 let operator = "";
 let operatorBeingDisplayed = 0;
-let secondOperandAvailable = 0;
 // Displays zero on display.
 function display_zero(){
     show.textContent = "0"
@@ -189,6 +188,11 @@ const clear = document.querySelector("#clear-btn")
 clear.addEventListener('click',()=>{
     display_zero();
     dot = 0;
+    opr1 = 0;
+    opr2 = 0;
+    operatorBeingDisplayed = 0;
+    temp_length = 0;
+    operator = "";
 })
 // Handles working of "DELETE" button.
 const btnDelete = document.querySelector("#delete-btn")
@@ -275,21 +279,21 @@ division.addEventListener('click', ()=>{
 })
 
 const equal = document.querySelector("#equal")
-equal.addEventListener('click',()=>{{
+equal.addEventListener('click',()=>{
         opr2 = show.textContent;
     if(operator == "add"){
-        show.textContent = parseFloat(opr1) + parseFloat(opr2);
+        show.textContent = Number(opr1) + Number(opr2);
     }else if(operator == "subtract"){
-        show.textContent = opr1 - opr2;
+        show.textContent = (opr1 - opr2);
     }else if(operator == "divide"){
         if(opr2 == 0){
             alert("Can't divide by zero");
+
         }else{
-            show.textContent = opr1 / opr2;
+            show.textContent = (opr1 / opr2);
         };
     }else if(operator == "multiply"){
         show.textContent = opr1 * opr2;
     }
     opr1 = show.textContent;
-}
 })
