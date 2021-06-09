@@ -31,6 +31,9 @@ one.addEventListener('click',()=>{
     if(temp_length == 0){
         display_nothing();
     }
+    if(dot == 1){
+        temp_length = 4
+    }
     show.textContent += 1;
     temp_length++;
 })
@@ -47,6 +50,9 @@ two.addEventListener('click',()=>{
     }
     if(temp_length == 0){
         display_nothing();
+    }
+    if(dot == 1){
+        temp_length = 4
     }
     show.textContent += 2;
     temp_length++;
@@ -65,6 +71,9 @@ three.addEventListener('click',()=>{
     if(temp_length == 0){
         display_nothing();
     }
+    if(dot == 1){
+        temp_length = 4
+    }
     show.textContent += 3;
     temp_length++;
 })
@@ -81,6 +90,9 @@ four.addEventListener('click',()=>{
     }
     if(temp_length == 0){
         display_nothing();
+    }
+    if(dot == 1){
+        temp_length = 4
     }
     show.textContent += "4";
     temp_length++;
@@ -99,6 +111,9 @@ five.addEventListener('click',()=>{
     if(temp_length == 0){
         display_nothing();
     }
+    if(dot == 1){
+        temp_length = 4
+    }
     show.textContent += "5";
     temp_length++;
 })
@@ -115,6 +130,9 @@ six.addEventListener('click',()=>{
     }
     if(temp_length == 0){
         display_nothing();
+    }
+    if(dot == 1){
+        temp_length = 4
     }
     show.textContent += "6";
     temp_length++;
@@ -133,6 +151,9 @@ seven.addEventListener('click',()=>{
     if(temp_length == 0){
         display_nothing();
     }
+    if(dot == 1){
+        temp_length = 4
+    }
     show.textContent += "7";
     temp_length++;
 })
@@ -150,6 +171,9 @@ eight.addEventListener('click',()=>{
     if(temp_length == 0){
         display_nothing();
     }
+    if(dot == 1){
+        temp_length = 4
+    }
     show.textContent += "8";
     temp_length++;
 })
@@ -166,6 +190,9 @@ nine.addEventListener('click',()=>{
     }
     if(temp_length == 0){
         display_nothing();
+    }
+    if(dot == 1){
+        temp_length = 4
     }
     show.textContent += "9";
     temp_length++;
@@ -281,19 +308,36 @@ division.addEventListener('click', ()=>{
 const equal = document.querySelector("#equal")
 equal.addEventListener('click',()=>{
         opr2 = show.textContent;
+        if( dot == 1){
     if(operator == "add"){
-        show.textContent = Number(opr1) + Number(opr2);
+        show.textContent = (Number(opr1)*10 + Number(opr2)*10)/10;
     }else if(operator == "subtract"){
-        show.textContent = (opr1 - opr2);
+        show.textContent = (opr1*10 - opr2*10)/10;
     }else if(operator == "divide"){
         if(opr2 == 0){
             alert("Can't divide by zero");
 
         }else{
-            show.textContent = (opr1 / opr2);
+            show.textContent = (opr1*10 / opr2*10);
         };
     }else if(operator == "multiply"){
-        show.textContent = opr1 * opr2;
-    }
+        show.textContent = (opr1*10 * opr2*10)/100;
+    }else{
+        if(operator == "add"){
+            show.textContent = (Number(opr1) + Number(opr2));
+        }else if(operator == "subtract"){
+            show.textContent = (opr1 - opr2);
+        }else if(operator == "divide"){
+            if(opr2 == 0){
+                alert("Can't divide by zero");
+    
+            }else{
+                show.textContent = (opr1 / opr2);
+            };
+        }else if(operator == "multiply"){
+            show.textContent = (opr1 * opr2);
+        }
+}
+        }
     opr1 = show.textContent;
 })
