@@ -197,6 +197,28 @@ nine.addEventListener('click',()=>{
     show.textContent += "9";
     temp_length++;
 })
+const zero = document.querySelector("#zero")
+zero.addEventListener('click',()=>{
+    if(operatorBeingDisplayed == 1){
+        display_nothing();
+        operatorBeingDisplayed =0;
+        secondOperandAvailable = 1;
+    }
+    if(temp_length == 5){
+        alert("Maximum limit reached");
+        return;
+    }
+    if(temp_length == 0){
+        display_nothing();
+    }
+    if(dot == 1){
+        temp_length = 4;
+    }
+    if(temp_length>=1){
+    show.textContent += "0";
+    temp_length++;
+    }
+})
 
 
 // Handles usage of dot for first operand.
@@ -226,7 +248,8 @@ const btnDelete = document.querySelector("#delete-btn")
 btnDelete.addEventListener('click',()=>{
     if(temp_length == 1){
         display_zero();
-    }else if(show.textContent !== "0"){
+        temp_length = 0;
+    }else if(show.textContent !== "0" && temp_length != 0){
     temp_delete = show.textContent;
     delete_string1 = temp_delete.slice(0, temp_length - 1);
     show.textContent = delete_string1;
@@ -322,7 +345,8 @@ equal.addEventListener('click',()=>{
         };
     }else if(operator == "multiply"){
         show.textContent = (opr1*10 * opr2*10)/100;
-    }else{
+    }
+}else{
         if(operator == "add"){
             show.textContent = (Number(opr1) + Number(opr2));
         }else if(operator == "subtract"){
@@ -338,6 +362,5 @@ equal.addEventListener('click',()=>{
             show.textContent = (opr1 * opr2);
         }
 }
-        }
     opr1 = show.textContent;
 })
